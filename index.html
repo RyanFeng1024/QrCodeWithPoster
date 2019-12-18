@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>推广海报动态生成</title>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		function GetQRPoster() {			
+			var c=document.getElementById("myCanvas");
+			c.width = 500;
+			c.height = 707;
+			
+			var ctx=c.getContext("2d");
+			ctx.rect(0, 0, c.width, c.height);
+			ctx.fillStyle = '#ccc';
+			ctx.fill();			
+			
+			var img=document.getElementById("bgImg");
+			ctx.drawImage(img,0,0);			
+			
+			var img2=document.getElementById("code");
+			ctx.drawImage(img2,122,324,260,260);	 //在画布指定位置上按原图大小绘制指定大小的图
+		}
+
+	</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main">
+			<input type="button" id="btnCreate" value="生成" onclick="GetQRPoster()" />
+            <div>
+				<img id="bgImg" alt="背景图" title="背景图" src="poster1.jpg" />
+				<img id="code" alt="二维码" title="二维码" src="qrcode.png" />
+			</div>
+            <canvas id="myCanvas">
+			</canvas>
+        </div>
+    </form>
+</body>
+</html>
