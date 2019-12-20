@@ -3,6 +3,7 @@
 
 ```
 index.html 为H5前端利用Canvas把两张图合并成一张，动态生成二维码海报
+https://myron1024.github.io/QrCodeWithPoster/
 ```
 ```
 QRCode.ashx.cs 为利用C#后端动态生成海报二维码.
